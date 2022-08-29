@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  dumpster-microservice:
+    image: "ghcr.io/smartwastecollection/dumpster-microservice:v1.0.12"
+    env_file:
+        - .env
+    ports:
+      - "3000:8080"
+
+  truck-microservice:
+    image: "ghcr.io/smartwastecollection/truck-microservice:v0.2.10"
+    env_file:
+        - .env
+    environment:
+        - server.port=8080
+    ports:
+        - "3001:8080"
+
+  booking-microservice:
+    image: "ghcr.io/smartwastecollection/booking-microservice:v0.1.11"
+    env_file:
+        - .booking-ms.env
+    ports:
+        - "3002:3000"
+
+  complaint-microservice:
+    image: "ghcr.io/smartwastecollection/complaint-microservice:v1.0.10"
+    env_file:
+        - .complaint-mission-ms.env
+    ports:
+        - "3003:8080"
+
+  mission-microservice:
+    image: "ghcr.io/smartwastecollection/mission-microservice:v0.1.5"
+    env_file:
+        - .env
+        - .complaint-mission-ms.env
+    ports:
+        - "3004:8080"
