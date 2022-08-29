@@ -8,6 +8,7 @@ docker compose up
 ```
 
 In order to build the docker compose you have to provide:
+
 in `.env` file
 ```bash
 AZURE_SERVICE_PRINCIPAL_NAME
