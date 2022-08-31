@@ -31,7 +31,7 @@ services:
         - "3003:8080"
 
   mission-microservice:
-    image: "ghcr.io/smartwastecollection/mission-microservice:v0.1.5"
+    image: "ghcr.io/smartwastecollection/mission-microservice:v0.1.6"
     env_file:
         - .env
         - .complaint-mission-ms.env
