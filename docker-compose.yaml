@@ -24,6 +24,8 @@ services:
     image: "ghcr.io/smartwastecollection/booking-microservice:v0.2.0"
     env_file:
         - .booking-ms.env
+    environment:
+        - SERVER_PORT=3000
     ports:
         - "3002:3000"
     networks:
