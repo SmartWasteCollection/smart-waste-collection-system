@@ -26,6 +26,16 @@ in `.booking-ms.env` file
 URI_MONGO_DB
 ```
 
+in `.authentication-ms.env` file
+```bash
+URI_MONGO_DB
+```
+
+in `.authentication-ms.env` file
+```bash
+URI_MONGO_DB
+```
+
 # System ports
 The following docker compose will build the Smart Waste Collection microservices under the following ports at `localhost`:
 - `dumpster-microservice` at port `3000`
@@ -33,3 +43,5 @@ The following docker compose will build the Smart Waste Collection microservices
 - `booking-microservice` at port `3002`
 - `complaint-microservice` at port `3003`
 - `mission-microservice` at port `3004`
+- `authentication-microservice` at port `3005`
+- `dashboard` at port `8080`
