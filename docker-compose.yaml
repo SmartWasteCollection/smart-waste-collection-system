@@ -39,7 +39,7 @@ services:
       - swc-net
 
   mission-microservice:
-    image: "ghcr.io/smartwastecollection/mission-microservice:v0.1.6"
+    image: "ghcr.io/smartwastecollection/mission-microservice:v0.1.7"
     env_file:
         - .env
         - .complaint-mission-ms.env
