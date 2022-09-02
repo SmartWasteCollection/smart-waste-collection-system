@@ -31,9 +31,14 @@ in `.authentication-ms.env` file
 URI_MONGO_DB
 ```
 
-in `.authentication-ms.env` file
+in `.dashboard.env` file
 ```bash
-URI_MONGO_DB
+VUE_APP_BOOKING_MICROSERVICE=
+VUE_APP_DUMPSTER_MICROSERVICE=
+VUE_APP_AUTHENTICATION_MICROSERVICE=
+VUE_APP_COMPLAINT_MICROSERVICE=
+VUE_APP_TRUCK_MICROSERVICE=
+VUE_APP_MISSION_MICROSERVICE=
 ```
 
 # System ports
