@@ -10,7 +10,7 @@ services:
       - swc-net
 
   truck-microservice:
-    image: "ghcr.io/smartwastecollection/truck-microservice:v0.2.10"
+    image: "ghcr.io/smartwastecollection/truck-microservice:v0.2.11"
     env_file:
         - .env
     environment:
