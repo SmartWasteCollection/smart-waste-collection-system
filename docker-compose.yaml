@@ -63,7 +63,7 @@ services:
       - swc-net
 
   dashboard:
-    image: "ghcr.io/smartwastecollection/dashboard:v0.1.0"
+    image: "ghcr.io/smartwastecollection/dashboard:v0.1.8"
     env_file:
       - .dashboard.env
     ports:
