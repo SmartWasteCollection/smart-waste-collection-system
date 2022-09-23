@@ -21,7 +21,7 @@ services:
       - swc-net
 
   booking-microservice:
-    image: "ghcr.io/smartwastecollection/booking-microservice:v0.2.0"
+    image: "ghcr.io/smartwastecollection/booking-microservice:v0.2.1"
     env_file:
         - .booking-ms.env
     environment:
