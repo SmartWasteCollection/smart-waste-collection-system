@@ -47,7 +47,8 @@ services:
         - .complaint-mission-ms.env
     environment:
         - DUMPSTER_ADDRESS=http://dumpster-microservice:8080/dumpsters/
-        - BOOKING_ADDRES=http://booking-microservice:8080/bookings/
+        - BOOKING_ADDRESS=http://booking-microservice:8080/bookings/
+        - TRUCK_MICROSERVICE=http://truck-microservice:8080
     ports:
         - "3004:8080"
     networks:
