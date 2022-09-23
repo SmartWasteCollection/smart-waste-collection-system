@@ -32,7 +32,7 @@ services:
       - swc-net
 
   complaint-microservice:
-    image: "ghcr.io/smartwastecollection/complaint-microservice:v1.0.10"
+    image: "ghcr.io/smartwastecollection/complaint-microservice:v1.0.12"
     env_file:
         - .complaint-mission-ms.env
     ports:
