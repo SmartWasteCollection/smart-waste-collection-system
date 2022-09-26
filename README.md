@@ -14,31 +14,11 @@ in `.env` file
 AZURE_SERVICE_PRINCIPAL_NAME
 AZURE_SECRET
 AZURE_TENANT
-```
 
-in `.complaint-mission-ms.env` file
-```bash
-MONGO_CONNECTION_STRING
-```
-
-in `.booking-ms.env` file
-```bash
-URI_MONGO_DB
-```
-
-in `.authentication-ms.env` file
-```bash
-URI_MONGO_DB
-```
-
-in `.dashboard.env` file
-```bash
-VUE_APP_BOOKING_MICROSERVICE
-VUE_APP_DUMPSTER_MICROSERVICE
-VUE_APP_AUTHENTICATION_MICROSERVICE
-VUE_APP_COMPLAINT_MICROSERVICE
-VUE_APP_TRUCK_MICROSERVICE
-VUE_APP_MISSION_MICROSERVICE
+AUTHENTICATION_DB_CONN=<Connection string to MongoDB authentication database>
+COMPLAINT_DB_CONN=<Connection string to MongoDB complaint database>
+MISSION_DB_CONN=<Connection string to MongoDB mission database>
+BOOKING_DB_CONN=<Connection string to MongoDB booking database>
 ```
 
 # System ports

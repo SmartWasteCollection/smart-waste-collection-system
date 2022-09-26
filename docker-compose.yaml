@@ -3,7 +3,7 @@ services:
   dumpster-microservice:
     image: "ghcr.io/smartwastecollection/dumpster-microservice:v1.1.2"
     env_file:
-        - .env
+      - .env
     ports:
       - "3000:8080"
     networks:
@@ -12,29 +12,32 @@ services:
   truck-microservice:
     image: "ghcr.io/smartwastecollection/truck-microservice:v0.2.11"
     env_file:
-        - .env
+      - .env
     environment:
-        - server.port=8080
+      - server.port=8080
     ports:
-        - "3001:8080"
+      - "3001:8080"
     networks:
       - swc-net
 
   booking-microservice:
     image: "ghcr.io/smartwastecollection/booking-microservice:v0.2.1"
     env_file:
-        - .booking-ms.env
+      - .env
     environment:
-        - SERVER_PORT=3000
+      - SERVER_PORT=3000
+      - URI_MONGO_DB=${BOOKING_DB_CONN}
     ports:
-        - "3002:3000"
+      - "3002:3000"
     networks:
       - swc-net
 
   complaint-microservice:
     image: "ghcr.io/smartwastecollection/complaint-microservice:v1.0.12"
     env_file:
-        - .complaint-mission-ms.env
+      - .env
+    environment:
+      - MONGO_CONNECTION_STRING=${COMPLAINT_DB_CONN}
     ports:
         - "3003:8080"
     networks:
@@ -44,11 +47,11 @@ services:
     image: "ghcr.io/smartwastecollection/mission-microservice:v0.2.0"
     env_file:
         - .env
-        - .complaint-mission-ms.env
     environment:
         - DUMPSTER_ADDRESS=http://dumpster-microservice:8080/dumpsters/
         - BOOKING_ADDRESS=http://booking-microservice:8080/bookings/
         - TRUCK_MICROSERVICE=http://truck-microservice:8080
+        - MONGO_CONNECTION_STRING=${MISSION_DB_CONN}
     ports:
         - "3004:8080"
     networks:
@@ -57,7 +60,9 @@ services:
   authentication-microservice:
     image: "ghcr.io/smartwastecollection/authentication-microservice:v0.0.2"
     env_file:
-      - .authentication-ms.env
+      - .env
+    environment:
+      - URI_MONGO_DB=${AUTHENTICATION_DB_CONN}
     ports:
       - "3005:3002"
     networks:
@@ -65,8 +70,13 @@ services:
 
   dashboard:
     image: "ghcr.io/smartwastecollection/dashboard:v0.1.8"
-    env_file:
-      - .dashboard.env
+    environment:
+      - VUE_APP_BOOKING_MICROSERVICE=http://localhost:3002
+      - VUE_APP_DUMPSTER_MICROSERVICE=http://localhost:3000
+      - VUE_APP_AUTHENTICATION_MICROSERVICE=http://localhost:3005
+      - VUE_APP_COMPLAINT_MICROSERVICE=http://localhost:3003
+      - VUE_APP_TRUCK_MICROSERVICE=http://localhost:3001
+      - VUE_APP_MISSION_MICROSERVICE=http://localhost:3004
     ports:
       - "8080:8080"
     networks:
