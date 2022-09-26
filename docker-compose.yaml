@@ -81,6 +81,13 @@ services:
       - "8080:8080"
     networks:
       - swc-net
+    depends_on:
+      - authentication-microservice
+      - mission-microservice
+      - complaint-microservice
+      - booking-microservice
+      - truck-microservice
+      - dumpster-microservice
 
 networks:
   swc-net:
