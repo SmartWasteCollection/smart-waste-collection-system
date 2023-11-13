@@ -33,7 +33,7 @@ services:
       - swc-net
 
   complaint-microservice:
-    image: "ghcr.io/smartwastecollection/complaint-microservice:v1.0.12"
+    image: "ghcr.io/smartwastecollection/complaint-microservice:v1.0.50"
     env_file:
       - .env
     environment:
